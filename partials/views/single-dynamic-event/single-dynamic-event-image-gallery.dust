@@ -1,0 +1,36 @@
+{?event.image_gallery}
+<div
+     class="image-gallery gallery js-image-gallery columns is-flex-wrap-wrap mt-6 mb-6"
+     data-next="{event.translations.next|attr}"
+     data-previous="{event.translations.previous|attr}">
+    {#event.image_gallery}
+        <a href="{event_custom_image.sizes.fullhd|url}"
+            class="column is-3 is-relative"
+            data-preview="{event_custom_image.sizes.medium|url}"
+            data-gallery="{event.gallery_id|attr}"
+            data-modal-button
+            aria-controls="{event.gallery_id|attr}"
+            data-caption="{caption|html}"
+            data-author="{author_name|html}"
+            data-image_title_and_artist="{image_title_and_artist|html}"
+            aria-expanded="false"
+            aria-label="{event.translations.open|html}"
+        >
+            {@image id=event_custom_image.id size="large" alt=event_custom_image.alt title=event_custom_image.alt class="objectfit-image" /}
+            <div class="icon-container is-absolute has-top-0 has-right-0 mr-4 mt-4 has-background-black">
+                {>"ui/icon" icon="expand" class="icon--large is-white" /}
+            </div>
+        </a>
+    {/event.image_gallery}
+
+    <!-- Markup of the modal -->
+    <div role="dialog" id="{event.gallery_id|attr}" class="modal" aria-modal="true" aria-labelledby="{event.gallery_id|attr}">
+        <div class="modal-background"></div>
+        <button class="button button--icon is-white is-outlined modal-close-button" aria-controls="{event.gallery_id|attr}">
+            {event.translations.close|html}
+            {>"ui/icon" icon="close" class="icon--medium" /}
+        </button>
+        <div class="modal-content"></div>
+    </div>
+</div>
+{/event.image_gallery}

@@ -1,0 +1,50 @@
+<div class="container section timeline">
+    <div class="timeline__anchors has-text-centered">
+        {#repeater}
+            {?year}
+                <a href="#timeline-{year|attr}" class="timeline-anchor ml-2 mr-2 has-text-weight-medium">{year|html}</a>
+            {/year}
+        {/repeater}
+    </div>
+    <div {?anchor}id="{anchor|attr}"{/anchor} class="mt-6 mb-6 mt-8-desktop mb-8-desktop">
+        {#repeater}
+            <div id="timeline-{year|attr}" class="timeline__row columns">
+                <div class="text-container column is-flex is-flex-direction-column is-align-items-flex-start is-justify-content-center">
+                    {?year}
+                        <p class="h2 mt-2 mb-2">{year|html}</p>
+                    {/year}
+                    {?title}
+                        <h2 class="h4 mt-2 mb-2 is-family-secondary">{title|html}</h3>
+                    {/title}
+                    {?content}
+                        <p class="mt-2 mb-2">{content|kses}</p>
+                    {/content}
+                    {?link}
+                        {>"ui/button-link" classes="mt-4 is-primary" /}
+                    {/link}
+                </div>
+                <div class="column has-height-100">
+                    {?image}
+                        {@image id=image.id size="large" class="objectfit-image" /}
+                    {/image}
+                    <div class="is-flex">
+                        {?image_caption}
+                            <div class="column is-6 pt-0 pb-0">
+                                <p class="has-text-small m-0">
+                                    {image_caption|html}
+                                </p>
+                            </div>
+                        {/image_caption}
+                        {?author_name}
+                            <div class="column is-6 pt-0 pb-0">
+                                <p class="has-text-small m-0 {?image_caption}has-text-right-tablet{/image_caption}">
+                                    {author_name|html}
+                                </p>
+                            </div>
+                        {/author_name}
+                    </div>
+                </div>
+            </div>
+        {/repeater}
+    </div>
+</div>

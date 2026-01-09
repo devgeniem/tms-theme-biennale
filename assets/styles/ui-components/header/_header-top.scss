@@ -1,0 +1,83 @@
+.site-header {
+    position: sticky;
+    top: $theme-spacing-half;
+    z-index: 6;
+    background-color: $color-biennale-red;
+    color: $navbar-item-navbar-link-color;
+    padding: 0;
+    top: 0;
+
+    .button {
+        outline-color: $white !important;
+    }
+
+    &__wrapper {
+        width: 95%;
+        max-width: $container-max-width;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        flex-grow: 0;
+    }
+
+    &__logo-image {
+        min-width: auto !important;
+
+        > a {
+            img {
+                max-height: 80px;
+                max-width: 80px;
+                object-fit: contain;
+                object-position: left;
+            }
+
+            &:focus {
+                outline-offset: .2rem;
+                outline: .15rem dotted $white !important;
+            }
+        }
+    }
+
+    #js-search-toggle {
+        margin-right: $theme-spacing-oneandhalf !important;
+        margin-left: $theme-spacing-oneandhalf !important;
+        border: none;
+        padding: .5rem;
+
+        .icon {
+            margin: 0 !important;
+            color: $color-biennale-white !important;
+        }
+    }
+
+    &__end {
+        justify-content: flex-end;
+    }
+
+    &__popup {
+        bottom: 0 !important;
+        box-shadow: 0 .0588rem .5rem rgba($black, .1);
+        background-color: $color-biennale-red;
+    }
+
+    .search-form {
+        align-items: normal !important;
+
+        &__input {
+            height: 100%;
+            background-color: transparent !important;
+            border-color: $white !important;
+            color: $white !important;
+            font-size: $body-font-size;
+        }
+    }
+
+    &__popup {
+        background-color: $color-biennale-red;
+    }
+
+    .popup__label {
+        color: $white;
+    }
+}

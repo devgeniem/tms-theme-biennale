@@ -1,0 +1,42 @@
+.single-post {
+
+    .main-content {
+        overflow-x: hidden;
+    }
+
+    .entry {
+        &__share-links {
+            h2 {
+                text-align: left !important;
+            }
+
+            .share-links {
+                justify-content: flex-start !important;
+            }
+        }
+
+        &__figure {
+            position: relative;
+
+            img {
+                width: auto;
+                max-height: $image-max-height;
+            }
+        }
+    }
+
+    .related-posts {
+
+        &__read-more {
+            font-size: 1.2rem;
+            font-family: $family-secondary;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+
+            &:not(:hover) {
+                color: inherit !important;
+            }
+        }
+    }
+}

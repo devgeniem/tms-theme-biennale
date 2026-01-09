@@ -1,0 +1,55 @@
+<div class="has-height-100 is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+    <div class="is-flex is-flex-direction-row is-justify-content-center">
+        <p class="mt-0 mb-3 h2 has-text-white is-family-secondary">
+            {?event.normalized.date}
+                {?event.weekday_prefix}
+                    <span class="is-capitalized">{event.weekday_prefix|html}</span>
+                {/event.weekday_prefix}
+                {event.normalized.date|html}
+            {/event.normalized.date}
+
+            {?event.normalized.time}
+                {event.time_prefix|html}
+                {event.normalized.time|html}
+            {/event.normalized.time}
+        </p>
+    </div>
+
+    {?event.normalized.location}
+        <p class="mt-0 mb-2 has-text-white is-family-secondary">
+            {event.normalized.location.name|html}
+        </p>
+    {/event.normalized.location}
+
+    {?event.normalized.price}
+        {#event.normalized.price}
+            <p class="mt-0 mb-2 has-text-white is-family-secondary">
+                {price|html}
+            </p>
+        {/event.normalized.price}
+    {/event.normalized.price}
+
+    {?event.normalized.price}
+        {#event.normalized.price}
+            {?.description}
+                <p class="mt-0 mb-2 has-text-white is-family-secondary">
+                    {.description|html}
+                </p>
+            {/.description}
+            {?.info_url.url}
+            <div class="is-flex mb-2">
+                <a href="{.info_url.url|url}" target="_blank"
+                    class="is-inline-block is-align-self-start button is-outlined-invert mt-3">
+                    {event.buy_ticket_string|html}
+                </a>
+            </div>
+            {/.info_url.url}
+        {/event.normalized.price}
+    {/event.normalized.price}
+
+    <div class="is-justify-content-start">
+        {?event.normalized.description}
+            {event.normalized.description|kses}
+        {/event.normalized.description}
+    </div>
+</div>

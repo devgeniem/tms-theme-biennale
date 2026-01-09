@@ -1,0 +1,3 @@
+<p class="info-group__label h5 is-relative mt-0 mb-3">
+    {title|html}
+</p>

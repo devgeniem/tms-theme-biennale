@@ -1,0 +1,179 @@
+{>"shared/base" /}
+
+{<content}
+    {#SingleManualEventCpt}
+        <main class="main-content" id="main-content">
+            <article class="entry">
+                <section class="section pb-6">
+                    <div class="container">
+                        <h1 class="entry__title mt-8 mb-8 has-text-centered">
+                            {event.normalized.name|html}
+                        </h1>
+                        {?event.orig.event_custom_subheading}
+                            <h2 class="mb-8 has-text-centered">
+                                {event.orig.event_custom_subheading|html}
+                            </h2>
+                        {/event.orig.event_custom_subheading}
+                        <div class="columns m-0">
+                            <div class="column m-0 p-0">
+                                {?hero_image}
+                                    <div class="is-flex is-flex-direction-column is-relative has-height-100">
+                                        <img class="entry__hero-image has-height-100" src="{hero_image|url}" alt=""
+                                            aria-hidden="true"
+                                            tabindex="-1" />
+                                        {?hero_image_credits}
+                                            <div class="entry__hero-image-credits">
+                                                {hero_image_credits|kses}
+                                            </div>
+                                        {/hero_image_credits}
+                                    </div>
+                                {/hero_image}
+                            </div>
+                            <div class="column p-0">
+                                <div class="entry__hero-info section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
+                                    {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section pt-0">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                {?event.normalized.short_description}
+                                    <div class="entry__content is-content-grid has-text-centered">
+                                        <p class="mt-6 mb-6 has-text-large">
+                                            {event.normalized.short_description|kses}
+                                        </p>
+                                    </div>
+                                {/event.normalized.short_description}
+
+                                <div class="columns">
+                                    <div class="info-group column is-8 mt-4 pr-0-desktop has-border-none">
+                                        {?event.orig.event_custom_main_content}
+                                            <div class="info-group__main-content">
+                                                {event.orig.event_custom_main_content|kses}
+                                            </div>
+                                        {/event.orig.event_custom_main_content}
+                                    </div>
+                                    <div class="info-group column is-4 mt-4 pl-6-desktop has-border-none">
+                                        {?event.orig.event_custom_artists}
+                                            <div class="mb-5">
+                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.artists_title template_classes=template_classes.info_group_title /}
+                                                {event.orig.event_custom_artists|kses}
+                                            </div>
+                                        {/event.orig.event_custom_artists}
+
+                                        {?event.orig.event_custom_compositions}
+                                            <div class="mb-5">
+                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.compositions_title template_classes=template_classes.info_group_title /}
+                                                {event.orig.event_custom_compositions|kses}
+                                            </div>
+                                        {/event.orig.event_custom_compositions}
+
+                                        {?event.orig.event_custom_creative_team}
+                                            <div class="mb-5">
+                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.creative_team_title template_classes=template_classes.info_group_title /}
+                                                {event.orig.event_custom_creative_team|kses}
+                                            </div>
+                                        {/event.orig.event_custom_creative_team}
+
+                                        {?event.orig.event_custom_artists_link_list}
+                                            <div class="mb-5">
+                                                {?event.orig.event_custom_artists_link_list.title}
+                                                    {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.orig.event_custom_artists_link_list.title template_classes=template_classes.info_group_title /}
+                                                {/event.orig.event_custom_artists_link_list.title}
+
+                                                {?event.orig.event_custom_artists_link_list.description}
+                                                    <div class="link-list__description mt-4">
+                                                        {event.orig.event_custom_artists_link_list.description|kses}
+                                                    </div>
+                                                {/event.orig.event_custom_artists_link_list.description}
+
+                                                {?event.orig.event_custom_artists_link_list.links}
+                                                    <ul class="link-list__links is-unstyled mt-4 keep-vertical-spacing">
+                                                        {#event.orig.event_custom_artists_link_list.links}
+                                                            <li class="mb-3 is-flex is-align-items-center">
+                                                                {>"ui/icon" icon=icon class="icon--xlarge is-primary mr-2" /}
+                                                                <a href="{link.url|url}" target="{link.target|attr}">
+                                                                    <span>{link.title|html}</span>
+                                                                </a>
+                                                            </li>
+                                                        {/event.orig.event_custom_artists_link_list.links}
+                                                    </ul>
+                                                {/event.orig.event_custom_artists_link_list.links}
+                                            </div>
+                                        {/event.orig.event_custom_artists_link_list}
+
+                                        {?event.orig.event_custom_composers_link_list}
+                                            <div>
+                                                {?event.orig.event_custom_composers_link_list.title}
+                                                    {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.orig.event_custom_composers_link_list.title template_classes=template_classes.info_group_title /}
+                                                {/event.orig.event_custom_composers_link_list.title}
+
+                                                {?event.orig.event_custom_composers_link_list.description}
+                                                    <div class="link-list__description mt-4">
+                                                        {event.orig.event_custom_composers_link_list.description|kses}
+                                                    </div>
+                                                {/event.orig.event_custom_composers_link_list.description}
+
+                                                {?event.orig.event_custom_composers_link_list.links}
+                                                    <ul class="link-list__links is-unstyled mt-4 keep-vertical-spacing">
+                                                        {#event.orig.event_custom_composers_link_list.links}
+                                                            <li class="mb-3 is-flex is-align-items-center">
+                                                                {>"ui/icon" icon=icon class="icon--xlarge is-primary mr-2" /}
+                                                                <a href="{link.url|url}" target="{link.target|attr}">
+                                                                    <span>{link.title|html}</span>
+                                                                </a>
+                                                            </li>
+                                                        {/event.orig.event_custom_composers_link_list.links}
+                                                    </ul>
+                                                {/event.orig.event_custom_composers_link_list.links}
+                                            </div>
+                                        {/event.orig.event_custom_composers_link_list}
+                                    </div>
+                                </div>
+
+                                {>"views/single-dynamic-event/single-dynamic-event-video-embed" /}
+                                {>"views/single-dynamic-event/single-dynamic-event-spotify-embed" /}
+                                {>"views/single-dynamic-event/single-dynamic-event-logo-wall" /}
+                                {>"views/single-dynamic-event/single-dynamic-event-image-gallery" /}
+
+                                {?related_events}
+                                    <div class="mt-6 mb-6">
+                                        <h2 class="has-text-left">
+                                            {event.related_events_title|html}
+                                        </h2>
+                                        <div class="columns is-multiline">
+                                            {#related_events}
+                                                <div class="column is-6 is-4-desktop">
+                                                    {>"views/page-events-calendar/page-events-calendar-item-grid" /}
+                                                </div>
+                                            {/related_events}
+                                        </div>
+                                    </div>
+                                {/related_events}
+
+                                {?share_links}
+                                    <div class="columns is-variable is-8-desktop">
+                                        <div class="column is-offset-1-desktop">
+                                            <div class="entry__share-links">
+                                                <h2 class="h6 mt-6 mb-6 has-text-left">
+                                                    {Strings.s.share.share_to_social_media|html}
+                                                </h2>
+
+                                                {>"ui/share-links" ul_class="is-justify-content-flex-start" li_class="mr-4" /}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {/share_links}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+    {/SingleManualEventCpt}
+{/content}

@@ -1,0 +1,10 @@
+main.main-content {
+    p > a,
+    p > em a,
+    p > i a,
+    p > b a,
+    p > strong a,
+    a.has-text-paragraph {
+        text-decoration: underline;
+    }
+}

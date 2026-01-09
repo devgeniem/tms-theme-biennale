@@ -1,0 +1,13 @@
+.events {
+    &__item {
+        border: 2px solid $color-biennale-red;
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+}
