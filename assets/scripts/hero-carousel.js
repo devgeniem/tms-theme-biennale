@@ -24,8 +24,8 @@ export default class HeroCarousel {
             arrows: false,
             pagination: false,
             autoplay: true,
-            speed: 600,
-            pauseOnHover: false,
+            speed: 750,
+            pauseOnHover: true,
             role: 'group',
         };
 

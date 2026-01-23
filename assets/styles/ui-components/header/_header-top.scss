@@ -2,7 +2,7 @@
     position: sticky;
     top: $theme-spacing-half;
     z-index: 6;
-    background-color: $color-biennale-red;
+    background-color: $color-biennale-green;
     color: $navbar-item-navbar-link-color;
     padding: 0;
     top: 0;
@@ -27,7 +27,7 @@
         > a {
             img {
                 max-height: 80px;
-                max-width: 80px;
+                max-width: 140px;
                 object-fit: contain;
                 object-position: left;
             }
@@ -58,7 +58,7 @@
     &__popup {
         bottom: 0 !important;
         box-shadow: 0 .0588rem .5rem rgba($black, .1);
-        background-color: $color-biennale-red;
+        background-color: $color-biennale-green;
     }
 
     .search-form {
@@ -74,7 +74,7 @@
     }
 
     &__popup {
-        background-color: $color-biennale-red;
+        background-color: $color-biennale-green;
     }
 
     .popup__label {

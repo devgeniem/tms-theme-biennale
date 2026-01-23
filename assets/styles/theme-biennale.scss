@@ -4,7 +4,7 @@
 
 @import "themes/includes";
 
-$primary: $color-biennale-red;
+$primary: $color-biennale-green;
 $primary-invert: $color-biennale-white;
 $primary-light: bulmaLighten($primary, 15);
 $primary-light-invert: $color-white;
@@ -25,7 +25,7 @@ $accent-light-invert: $black;
 $accent-dark: $color-black;
 $accent-dark-invert: $white;
 
-$light: $color-biennale-red;
+$light: $color-biennale-green;
 $light-invert: $color-biennale-white;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;

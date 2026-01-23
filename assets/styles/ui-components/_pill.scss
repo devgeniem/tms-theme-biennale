@@ -1,6 +1,6 @@
 .pill {
     border-width: 0 !important;
-    background-color: $color-biennale-red !important;
+    background-color: $color-biennale-green !important;
     color: $white !important;
     font-family: $family-primary !important;
     font-size: 1rem !important;
@@ -20,7 +20,7 @@
         &:focus {
             text-decoration: underline !important;
             color: $white !important;
-            background-color: $color-biennale-red !important;
+            background-color: $color-biennale-green !important;
             border-color: transparent !important;
         }
     }
