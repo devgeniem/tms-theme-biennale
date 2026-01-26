@@ -39,7 +39,7 @@
         width: 100%;
         min-width: auto;
         padding-top: 0;
-        border: .15rem solid $white;
+        border: .15rem solid $primary;
         border-top: 0;
         border-radius: $theme-spacing-half !important;
         border: 0;
@@ -70,7 +70,7 @@
 .lang-nav {
     &--horizontal {
         a {
-            border-color: $white !important;
+            border-color: $primary !important;
 
             &.has-background-primary {
                 &:hover,
@@ -82,7 +82,7 @@
 
             &:focus {
                 outline-offset: .2rem;
-                outline: .15rem dotted $white !important;
+                outline: .15rem dotted $primary !important;
             }
         }
     }
