@@ -1,5 +1,32 @@
 .hero {
     height: auto !important;
+    position: relative;
+
+    @include from($tablet) {
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -285px;
+            height: 300px;
+            width: 30%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        &::before {
+            left: 0;
+            background-image: url('../images/roots_9.svg');
+            background-position: top left;
+        }
+
+        &::after {
+            right: 0;
+            background-image: url('../images/roots_12.svg');
+            background-position: top right;
+        }
+    }
 
     @include until($tablet) {
         padding-left: 0;
