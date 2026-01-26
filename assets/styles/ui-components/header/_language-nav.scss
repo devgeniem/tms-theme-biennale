@@ -17,8 +17,11 @@
         .button {
             padding: $theme-spacing-quarter $theme-spacing-half !important;
             background-color: transparent;
+            color: $primary !important;
             border: none;
+            border-radius: 0 !important;
             font-size: 1rem !important;
+            font-weight: $weight-bold !important;
 
             &:hover,
             &:focus,
@@ -52,7 +55,7 @@
             text-align: center;
 
             .dropdown-item {
-                color: $black;
+                color: $primary;
                 font-weight: $weight-bold;
                 padding: $theme-spacing-quarter !important;
                 font-size: 1rem !important;
