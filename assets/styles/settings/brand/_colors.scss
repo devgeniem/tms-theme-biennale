@@ -14,7 +14,7 @@ $color-biennale-yellow: #E9D099;
 $color-biennale-lightgray: #E5E7EB;
 
 $color-biennale-button: $color-biennale-green;
-$color-biennale-button-hover: bulmaDarken($color-biennale-green, 10);
+$color-biennale-button-hover: $color-biennale-green;
 
 $color-tekstin-vari: #333333;
 $color-ui-border: #414141;

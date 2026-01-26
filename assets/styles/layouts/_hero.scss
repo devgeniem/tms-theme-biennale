@@ -37,13 +37,13 @@
             }
 
             @include from($tablet) {
-                height: 90vh;
+                height: 85vh;
                 min-height: 500px;
-                max-height: 900px;
+                max-height: 800px;
             }
 
             @media (min-width: 2200px) {
-                height: 50vw;
+                height: 45vw;
                 max-height: none;
             }
 

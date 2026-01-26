@@ -1,9 +1,8 @@
 .site-header {
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: $theme-spacing-half;
     z-index: 6;
-    background-color: rgba(255, 255, 255, .3);
+    background-color: $primary;
     color: $navbar-item-navbar-link-color;
     padding: 0;
     top: 0;
@@ -71,6 +70,24 @@
             border-color: $white !important;
             color: $white !important;
             font-size: $body-font-size;
+        }
+
+        .button {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                color: $primary-invert !important;
+                border-color: $primary-invert !important;
+
+                .icon {
+                    fill: $primary-invert !important;
+                }
+            }
+
+            &:focus {
+                outline-color: $primary-invert !important;
+            }
         }
     }
 

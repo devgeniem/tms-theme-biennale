@@ -17,7 +17,6 @@
         .button {
             padding: $theme-spacing-quarter $theme-spacing-half !important;
             background-color: transparent;
-            color: $primary !important;
             border: none;
             border-radius: 0 !important;
             font-size: 1rem !important;
@@ -42,7 +41,7 @@
         width: 100%;
         min-width: auto;
         padding-top: 0;
-        border: .15rem solid $primary;
+        border: .15rem solid $white;
         border-top: 0;
         border-radius: $theme-spacing-half !important;
         border: 0;
@@ -73,7 +72,7 @@
 .lang-nav {
     &--horizontal {
         a {
-            border-color: $primary !important;
+            border-color: $white !important;
 
             &.has-background-primary {
                 &:hover,
@@ -85,7 +84,7 @@
 
             &:focus {
                 outline-offset: .2rem;
-                outline: .15rem dotted $primary !important;
+                outline: .15rem dotted $white !important;
             }
         }
     }
