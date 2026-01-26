@@ -26,7 +26,7 @@
         &.current-menu-item,
         &.current-menu-parent {
             background: $navbar-item-navbar-active-bg-color !important;
-            border-bottom-color: rgba(255, 255, 255, .6);
+            border-bottom-color: $primary;
             border-width: 3px !important;
             margin-bottom: -3px !important;
         }

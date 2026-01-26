@@ -5,18 +5,18 @@
 @import "themes/includes";
 
 $primary: $color-biennale-green;
-$primary-invert: $color-biennale-white;
+$primary-invert: $color-white;
 $primary-light: bulmaLighten($primary, 15);
 $primary-light-invert: $color-white;
 $primary-dark: $color-black;
 $primary-dark-invert: $color-white;
 
-$secondary: $color-biennale-yellow;
+$secondary: $color-biennale-turquoise;
 $secondary-invert: $color-black;
 $secondary-light: $white;
 $secondary-light-invert: $color-black;
 $secondary-dark: $color-black;
-$secondary-dark-invert: $color-biennale-white;
+$secondary-dark-invert: $color-white;
 
 $accent: $color-biennale-yellow;
 $accent-invert: $color-black;
@@ -26,7 +26,7 @@ $accent-dark: $color-black;
 $accent-dark-invert: $white;
 
 $light: $color-biennale-green;
-$light-invert: $color-biennale-white;
+$light-invert: $color-white;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
 $border-light: $color-biennale-lightgray;
@@ -85,13 +85,13 @@ $sibling-navigation-item-background-color: $black;
 $sibling-navigation-item-active-color: $black;
 
 $secondary-navbar-item-font-weight: 500;
-$navbar-item-navbar-link-color: $color-biennale-white;
+$navbar-item-navbar-link-color: $primary;
 $navbar-item-has-dropdown-active: $navbar-item-navbar-link-color;
 $navbar-item-grid-item-border-color: $color-ui-border;
 $navbar-item-navbar-active-bg-color: transparent;
 
-$fly-out-nav-trigger-icon: $white;
-$fly-out-nav-trigger-icon-hover: $color-biennale-darkblue;
+$fly-out-nav-trigger-icon: $primary;
+$fly-out-nav-trigger-icon-hover: $primary;
 $fly-out-nav-primary-link: $white;
 $fly-out-nav-primary-link-hover: $white;
 $fly-out-nav-primary-dropdown-active-background: $black;

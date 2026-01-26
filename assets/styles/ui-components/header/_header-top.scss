@@ -1,8 +1,9 @@
 .site-header {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: $theme-spacing-half;
     z-index: 6;
-    background-color: $color-biennale-green;
+    background-color: rgba(255, 255, 255, .3);
     color: $navbar-item-navbar-link-color;
     padding: 0;
     top: 0;
@@ -47,7 +48,7 @@
 
         .icon {
             margin: 0 !important;
-            color: $color-biennale-white !important;
+            color: $color-white !important;
         }
     }
 
