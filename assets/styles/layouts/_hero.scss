@@ -28,6 +28,14 @@
         }
     }
 
+    @media (min-width: 2200px) {
+        &::before,
+        &::after {
+            bottom: -365px;
+            height: 380px;
+        }
+    }
+
     @include until($tablet) {
         padding-left: 0;
         padding-right: 0;
