@@ -107,8 +107,16 @@ class AlterManualEventGroup {
                 'label'        => 'Esiintyjät',
                 'instructions' => '',
             ],
+            'compositions_heading'    => [
+                'label'        => 'Sävellykset - otsikko',
+                'instructions' => '',
+            ],
             'compositions'    => [
                 'label'        => 'Sävellykset',
+                'instructions' => '',
+            ],
+            'creative_team_heading'    => [
+                'label'        => 'Työryhmä - otsikko',
                 'instructions' => '',
             ],
             'creative_team'    => [
@@ -173,12 +181,22 @@ class AlterManualEventGroup {
                 ->disable_media_upload()
                 ->set_instructions( $strings['artists']['instructions'] );
 
+            $event_compositions_heading_field = ( new Field\Text( $strings['compositions_heading']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_compositions_heading' )
+                ->set_name( 'event_custom_compositions_heading' )
+                ->set_instructions( $strings['compositions_heading']['instructions'] );
+
             $event_compositions_field = ( new Field\Wysiwyg( $strings['compositions']['label'] ) )
                 ->set_key( 'fg_manual_event_fields_event_custom_compositions' )
                 ->set_name( 'event_custom_compositions' )
                 ->set_toolbar( [ 'bold', 'italic', 'link' ] )
                 ->disable_media_upload()
                 ->set_instructions( $strings['compositions']['instructions'] );
+
+            $event_creative_team_heading_field = ( new Field\Text( $strings['creative_team_heading']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_creative_team_heading' )
+                ->set_name( 'event_custom_creative_team_heading' )
+                ->set_instructions( $strings['creative_team_heading']['instructions'] );
 
             $event_creative_team_field = ( new Field\Wysiwyg( $strings['creative_team']['label'] ) )
                 ->set_key( 'fg_manual_event_fields_event_custom_creative_team' )
@@ -238,7 +256,9 @@ class AlterManualEventGroup {
                 $event_subheading_field,
                 $event_main_content_field,
                 $event_artists_field,
+                $event_compositions_heading_field,
                 $event_compositions_field,
+                $event_creative_team_heading_field,
                 $event_creative_team_field,
                 $event_artists_link_list_field,
                 $event_composers_link_list_field,
