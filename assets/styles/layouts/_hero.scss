@@ -50,6 +50,31 @@
     }
 
     &__carousel {
+        .splide__arrows {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            top: 50%;
+            z-index: 10;
+
+            .splide__arrow {
+                border: 0;
+                background: transparent;
+                cursor: pointer;
+
+                svg {
+                    fill: $white;
+                    stroke: $primary;
+                    stroke-width: 2px;
+                }
+
+                &--prev svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
         &__item {
             position: relative;
             height: 65vh;

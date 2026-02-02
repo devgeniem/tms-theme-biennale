@@ -18,19 +18,20 @@ export default class HeroCarousel {
             return;
         }
 
-        Splide.defaults = {
-            type: 'fade',
-            rewind: true,
-            arrows: false,
-            pagination: false,
-            autoplay: true,
-            speed: 750,
-            pauseOnHover: true,
-            role: 'group',
-        };
-
         for ( let i = 0; i < this.carousels.length; i++ ) {
-            new Splide( this.carousels[ i ] ).mount();
+            const slides = this.carousels[ i ].querySelectorAll( '.splide__slide' );
+            const hasMultipleSlides = slides.length > 1;
+
+            new Splide( this.carousels[ i ], {
+                type: 'fade',
+                rewind: true,
+                arrows: hasMultipleSlides,
+                pagination: false,
+                autoplay: hasMultipleSlides,
+                speed: 750,
+                pauseOnHover: true,
+                role: 'group',
+            } ).mount();
         }
     }
 
