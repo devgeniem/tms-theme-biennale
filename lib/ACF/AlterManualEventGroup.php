@@ -49,7 +49,7 @@ class AlterManualEventGroup {
     public function remove_event_fields( $fields ) {
         $fields[0]->remove_field( 'recurring_event' );
         $fields[0]->remove_field( 'dates' );
-        $fields[0]->remove_field( 'end_datetime' );
+        // $fields[0]->remove_field( 'end_datetime' );
         $fields[0]->remove_field( 'provider' );
         $fields[0]->remove_field( 'is_virtual_event' );
         $fields[0]->remove_field( 'virtual_event_link' );
@@ -121,6 +121,14 @@ class AlterManualEventGroup {
             ],
             'creative_team'    => [
                 'label'        => 'Työryhmä',
+                'instructions' => '',
+            ],
+            'custom_text_heading'    => [
+                'label'        => 'Vapaaehtoinen tekstipalsta - otsikko',
+                'instructions' => '',
+            ],
+            'custom_text'    => [
+                'label'        => 'Vapaaehtoinen tekstipalsta',
                 'instructions' => '',
             ],
             'links'          => [
@@ -246,6 +254,18 @@ class AlterManualEventGroup {
                 'event_custom_composers_link_list'
             );
 
+            $event_custom_text_heading_field = ( new Field\Text( $strings['custom_text_heading']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_custom_text_heading' )
+                ->set_name( 'event_custom_custom_text_heading' )
+                ->set_instructions( $strings['custom_text_heading']['instructions'] );
+
+            $event_custom_text_field = ( new Field\Wysiwyg( $strings['custom_text']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_custom_text' )
+                ->set_name( 'event_custom_custom_text' )
+                ->set_toolbar( [ 'bold', 'italic', 'link' ] )
+                ->disable_media_upload()
+                ->set_instructions( $strings['custom_text']['instructions'] );
+
             $event_image_gallery_field->add_field( $event_image_field );
             $event_logo_wall_field->add_fields( [
                 $event_logo_field,
@@ -262,6 +282,8 @@ class AlterManualEventGroup {
                 $event_creative_team_field,
                 $event_artists_link_list_field,
                 $event_composers_link_list_field,
+                $event_custom_text_heading_field,
+                $event_custom_text_field,
                 $event_video_embed_field,
                 $event_spotify_embed_field,
                 $event_logo_wall_field,

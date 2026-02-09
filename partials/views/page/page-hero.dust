@@ -1,6 +1,6 @@
 <section class="page__hero section is-relative is-flex is-align-items-end is-justify-content-center p-0 has-background-cover" {@inlinebg id=Page.hero_image size="fullhd" /}>
     {?Page.use_overlay}
         <div class="overlay"></div>
-        {>"ui/entry-title" class="mt-0 has-text-centered has-text-white" /}
+        {>"ui/entry-title" class="mt-0 mb-6 has-text-centered has-text-white" /}
     {/Page.use_overlay}
 </section>

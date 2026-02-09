@@ -101,7 +101,7 @@ class SingleManualEventCpt extends PageEvent {
         }
 
         $event->recurring_event = false;
-        $event->end_datetime    = null;
+        $event->end_datetime    = ! empty( $event->end_datetime ) ? $event->end_datetime : null;
 
         // Format gallery images
         $event->event_custom_image_gallery = is_array( $event->event_custom_image_gallery ) && ! empty( $event->event_custom_image_gallery )
@@ -147,6 +147,11 @@ class SingleManualEventCpt extends PageEvent {
             ],
         ];
 
+        // If event starts at 00:00, it's likely an all-day event, so remove time
+        if ( date( 'H:i', strtotime( $event->start_datetime ) ) === '00:00' ) {
+            $normalized_event['time'] = null;
+        }
+
         return [
             'normalized'               => $normalized_event,
             'orig'                     => $event,
@@ -159,7 +164,7 @@ class SingleManualEventCpt extends PageEvent {
             'video_title'              => \__( 'Watch', 'tms-theme-biennale' ),
             'spotify_title'            => \__( 'Listen', 'tms-theme-biennale' ),
             'related_events_title'     => \__( 'At the same concert', 'tms-theme-biennale' ),
-            'weekday_prefix'           => $weekday_prefix,
+            'weekday_prefix'           => ! empty( $event->end_datetime ) ? null : $weekday_prefix,
             'location_price_separator' => $event_location ? ', ' : '',
             'gallery_id'               => \wp_unique_id( 'image-gallery-' ),
             'translations'             => ( new \Strings() )->s()['gallery'] ?? [],
@@ -209,7 +214,7 @@ class SingleManualEventCpt extends PageEvent {
             $event->title        = \get_the_title( $id );
             $event->url          = \get_permalink( $id );
             $event->image        = \has_post_thumbnail( $id ) ? \get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
-            $event->end_datetime = null;
+            $event->end_datetime = ! empty( $event->end_datetime ) ? $event->end_datetime : null;
             $related_events[]    = ManualEvent::normalize_event( $event );
         }
         \wp_reset_postdata();

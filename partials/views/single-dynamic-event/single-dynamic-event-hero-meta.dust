@@ -1,5 +1,5 @@
 <div class="has-height-100 is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
-    <div class="is-flex is-flex-direction-row is-justify-content-center">
+    <div class="is-flex is-flex-direction-column is-align-items-center">
         <p class="mt-0 mb-3 h2 has-text-white is-family-secondary">
             {?event.normalized.date}
                 {?event.weekday_prefix}
@@ -7,7 +7,8 @@
                 {/event.weekday_prefix}
                 {event.normalized.date|html}
             {/event.normalized.date}
-
+        </p>
+        <p class="mt-0 mb-3 h2 has-text-white is-family-secondary">
             {?event.normalized.time}
                 {event.time_prefix|html}
                 {event.normalized.time|html}

@@ -20,14 +20,15 @@
                 position: relative;
                 z-index: 3;
             }
+
+            @include until($tablet) {
+                .h2 {
+                    font-size: 1.25rem !important;
+                }
+            }
         }
 
         .info-group__main-content {
-            @include from($tablet) {
-                column-count: 2;
-                gap: $theme-spacing-two;
-            }
-
             > p:first-of-type {
                 margin-top: 0;
             }

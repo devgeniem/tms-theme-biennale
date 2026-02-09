@@ -163,7 +163,7 @@ class PageCombinedEventsList extends PageEventsSearch {
             $event->title        = \get_the_title( $id );
             $event->url          = \get_permalink( $id );
             $event->image        = \has_post_thumbnail( $id ) ? \get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
-            $event->end_datetime = null;
+            $event->end_datetime = ! empty( $event->end_datetime ) ? $event->end_datetime : null;
 
             return PostType\ManualEvent::normalize_event( $event );
         }, $query->posts );
