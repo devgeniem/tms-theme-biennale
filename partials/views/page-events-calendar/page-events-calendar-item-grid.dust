@@ -30,15 +30,17 @@
                 </p>
             </div>
 
-            <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">
-                <span class="is-flex" aria-label="{Strings.s.event.time|attr}">
-                    {>"ui/icon" icon="time" class="icon--large is-primary mr-4" /}
-                </span>
+            {?time}
+                <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">
+                    <span class="is-flex" aria-label="{Strings.s.event.time|attr}">
+                        {>"ui/icon" icon="time" class="icon--large is-primary mr-4" /}
+                    </span>
 
-                <p class="m-0 is-family-secondary">
-                    {time|kses}
-                </p>
-            </div>
+                    <p class="m-0 is-family-secondary">
+                        {time|kses}
+                    </p>
+                </div>
+            {/time}
 
             {?location.name}
                 <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">

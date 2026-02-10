@@ -165,7 +165,14 @@ class PageCombinedEventsList extends PageEventsSearch {
             $event->image        = \has_post_thumbnail( $id ) ? \get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
             $event->end_datetime = ! empty( $event->end_datetime ) ? $event->end_datetime : null;
 
-            return PostType\ManualEvent::normalize_event( $event );
+            $normalized_event = PostType\ManualEvent::normalize_event( $event );
+
+            // If event starts at 00:00, it's likely an all-day event, so remove time
+            if ( date( 'H:i', strtotime( $event->start_datetime ) ) === '00:00' ) {
+                $normalized_event['time'] = null;
+            }
+
+            return $normalized_event;
         }, $query->posts );
 
         return $events;
