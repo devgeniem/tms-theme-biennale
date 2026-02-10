@@ -136,7 +136,7 @@
 
                                         {?event.orig.event_custom_custom_text}
                                             <div class="mt-5">
-                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.custom_custom_text_heading template_classes=template_classes.info_group_title /}
+                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.custom_text_heading template_classes=template_classes.info_group_title /}
                                                 {event.orig.event_custom_custom_text|kses}
                                             </div>
                                         {/event.orig.event_custom_custom_text}

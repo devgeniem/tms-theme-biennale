@@ -160,6 +160,7 @@ class SingleManualEventCpt extends PageEvent {
             'artists_title'            => \__( 'Artists', 'tms-theme-biennale' ),
             'compositions_title'       => $event->event_custom_compositions_heading ?? '',
             'creative_team_title'      => $event->event_custom_creative_team_heading ?? '',
+            'custom_text_heading'      => $event->event_custom_custom_text_heading ?? '',
             'links_title'              => \__( 'Links', 'tms-theme-biennale' ),
             'video_title'              => \__( 'Watch', 'tms-theme-biennale' ),
             'spotify_title'            => \__( 'Listen', 'tms-theme-biennale' ),
