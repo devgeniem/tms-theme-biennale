@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-02-16
+
 - TMS-1222:
     - Tampere biennale theme modified from tms-theme-jazzhappening
     - Remove Artist & Festival CPTs and templates
