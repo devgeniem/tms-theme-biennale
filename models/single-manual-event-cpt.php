@@ -174,62 +174,11 @@ class SingleManualEventCpt extends PageEvent {
             'links_title'              => \__( 'Links', 'tms-theme-biennale' ),
             'video_title'              => \__( 'Watch', 'tms-theme-biennale' ),
             'spotify_title'            => \__( 'Listen', 'tms-theme-biennale' ),
-            'related_events_title'     => \__( 'At the same concert', 'tms-theme-biennale' ),
             'weekday_prefix'           => ! empty( $event->end_datetime ) ? null : $weekday_prefix,
             'location_price_separator' => $event_location ? ', ' : '',
             'gallery_id'               => \wp_unique_id( 'image-gallery-' ),
             'translations'             => ( new \Strings() )->s()['gallery'] ?? [],
             'image_gallery'            => $event->event_custom_image_gallery,
         ];
-    }
-
-    /**
-     * Related events by category
-     *
-     * @return array
-     */
-    public function related_events() : ?array {
-        $category_ids = \wp_get_object_terms( $this->get_event_id(), ManualEventCategory::SLUG, ['fields' => 'ids'] );
-
-        if ( empty( $category_ids ) ) {
-            return [];
-        }
-
-        $args = [
-            'post_type'      => ManualEvent::SLUG,
-            'posts_per_page' => -1,
-            'post__not_in'   => [ $this->get_event_id() ],
-            'tax_query'      => [
-                [
-                    'taxonomy' => ManualEventCategory::SLUG,
-                    'field'    => 'id',
-                    'terms'    => $category_ids,
-                ],
-            ],
-        ];
-
-        $query = new \WP_Query( $args );
-
-        if ( ! $query->have_posts() ) {
-            return null;
-        }
-
-        $related_events = [];
-
-        while ( $query->have_posts() ) {
-            $query->the_post();
-
-            $id                  = \get_the_ID();
-            $event               = (object) \get_fields( $id );
-            $event->id           = $id;
-            $event->title        = \get_the_title( $id );
-            $event->url          = \get_permalink( $id );
-            $event->image        = \has_post_thumbnail( $id ) ? \get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
-            $event->end_datetime = ! empty( $event->end_datetime ) ? $event->end_datetime : null;
-            $related_events[]    = ManualEvent::normalize_event( $event );
-        }
-        \wp_reset_postdata();
-
-        return $related_events;
     }
 }
