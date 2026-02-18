@@ -172,6 +172,16 @@ class PageCombinedEventsList extends PageEventsSearch {
                 $normalized_event['time'] = null;
             }
 
+            // Remove spaces around dash in date formatting for this theme
+            if ( isset( $normalized_event['date'] ) && strpos( $normalized_event['date'], ' - ' ) !== false ) {
+                $normalized_event['date'] = str_replace( ' - ', '-', $normalized_event['date'] );
+            }
+
+            // Remove spaces around dash in time formatting for this theme
+            if ( isset( $normalized_event['time'] ) && strpos( $normalized_event['time'], ' - ' ) !== false ) {
+                $normalized_event['time'] = str_replace( ' - ', '-', $normalized_event['time'] );
+            }
+
             return $normalized_event;
         }, $query->posts );
 

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1239: Remove related events-section from manual event single page
 - TMS-1246: Center image-block image
+- TMS-1245: Remove spaces around dash in time & dates for event item
 
 ## [1.0.0] - 2026-02-16
 
