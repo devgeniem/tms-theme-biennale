@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-1239: Remove related events-section from manual event single page
+- TMS-1239:
+    - Remove related events-section from manual event single page
+    - Change event logo-wall img sizes
 
 ## [1.0.0] - 2026-02-16
 
