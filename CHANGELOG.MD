@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-1239: Remove related events-section from manual event single page
+- TMS-1239:
+    - Remove related events-section from manual event single page
+    - Change event logo-wall img sizes
 - TMS-1246: Center image-block image
 - TMS-1245: Remove spaces around dash in time & dates for event item
 - TMS-1242: Change hamburger-menu icon color
