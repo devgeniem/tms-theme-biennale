@@ -85,7 +85,7 @@ class PageCombinedEventsSearch extends PageEventsSearch {
         }
 
         // Only show "No search term given" when no filters are in use
-        return \__( 'No search term given', 'tms-plugin-manual-events' );
+        return \__( 'No search term given', 'tms-theme-biennale' );
     }
 
     /**

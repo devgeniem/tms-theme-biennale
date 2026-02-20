@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
-"POT-Creation-Date: 2026-02-02 11:36+0200\n"
+"POT-Creation-Date: 2026-02-20 13:00+0200\n"
 "PO-Revision-Date: 2022-01-12 16:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,32 +22,9 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:1
-msgid "entries"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "values"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "keys"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "Wrong index!"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "Wrong offset!"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "Wrong length!"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "splide__track"
+#: assets/dist/vendor.js:4630
+msgctxt "text direction"
+msgid "ltr"
 msgstr ""
 
 #: lib/ThemeCustomizationController.php:142
@@ -55,35 +32,56 @@ msgid "Send Comment"
 msgstr ""
 
 #: models/page-combined-events-list.php:57
+#: models/page-combined-events-search.php:84
 msgid "No results"
 msgstr ""
 
-#: models/page-combined-events-list.php:220
+#: models/page-combined-events-list.php:227
 msgid "Filter by day"
 msgstr ""
 
-#: models/page-combined-events-list.php:221
+#: models/page-combined-events-list.php:228
 msgid "Change order"
 msgstr ""
 
-#: models/page-combined-events-list.php:222
+#: models/page-combined-events-list.php:229
 msgid "Order:"
 msgstr ""
 
-#: models/page-combined-events-list.php:278
+#: models/page-combined-events-list.php:285
 msgid "All days"
 msgstr ""
 
-#: models/page-combined-events-list.php:317
+#: models/page-combined-events-list.php:324
 msgid "All"
 msgstr ""
 
-#: models/page-combined-events-list.php:345
+#: models/page-combined-events-list.php:352
 msgid "Date"
 msgstr ""
 
-#: models/page-combined-events-list.php:350
+#: models/page-combined-events-list.php:357
 msgid "Alphabetical"
+msgstr ""
+
+#: models/page-combined-events-search.php:57
+msgid "Search term"
+msgstr ""
+
+#: models/page-combined-events-search.php:58
+msgid "Events from"
+msgstr ""
+
+#: models/page-combined-events-search.php:59
+msgid "Start date"
+msgstr ""
+
+#: models/page-combined-events-search.php:60
+msgid "End date"
+msgstr ""
+
+#: models/page-combined-events-search.php:88
+msgid "No search term given"
 msgstr ""
 
 #. translators: 1: The URL to renew cookie consent 2: The consent type
@@ -98,31 +96,31 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:153
+#: models/single-manual-event-cpt.php:168
 msgid "Buy ticket"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:154
+#: models/single-manual-event-cpt.php:169
 msgid "at"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:155
+#: models/single-manual-event-cpt.php:170
 msgid "Artists"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:158
+#: models/single-manual-event-cpt.php:174
 msgid "Links"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:159
+#: models/single-manual-event-cpt.php:175
 msgid "Watch"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:160
+#: models/single-manual-event-cpt.php:176
 msgid "Listen"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:161
+#: models/single-manual-event-cpt.php:177
 msgid "At the same concert"
 msgstr ""
 
