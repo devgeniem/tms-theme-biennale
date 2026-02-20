@@ -220,7 +220,24 @@ class PageCombinedEventsSearch extends PageEventsSearch {
             $event->url   = \get_permalink( $id );
             $event->image = \has_post_thumbnail( $id ) ? \get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
 
-            return PostType\ManualEvent::normalize_event( $event );
+            $normalized_event = PostType\ManualEvent::normalize_event( $event );
+
+            // If event starts at 00:00, it's likely an all-day event, so remove time
+            if ( date( 'H:i', strtotime( $event->start_datetime ) ) === '00:00' ) {
+                $normalized_event['time'] = null;
+            }
+
+            // Remove spaces around dash in date formatting for this theme
+            if ( isset( $normalized_event['date'] ) && strpos( $normalized_event['date'], ' - ' ) !== false ) {
+                $normalized_event['date'] = str_replace( ' - ', '-', $normalized_event['date'] );
+            }
+
+            // Remove spaces around dash in time formatting for this theme
+            if ( isset( $normalized_event['time'] ) && strpos( $normalized_event['time'], ' - ' ) !== false ) {
+                $normalized_event['time'] = str_replace( ' - ', '-', $normalized_event['time'] );
+            }
+
+            return $normalized_event;
         }, $query->posts );
 
         return $events;
