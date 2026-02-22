@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1244: Add modified combined-events-search model
 - TMS-1242: Change hamburger-menu icon color
 - TMS-1239:
     - Remove related events-section from manual event single page
