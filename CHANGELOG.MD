@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1256: Add min-width for event filter select-elements
+
+## [1.1.1] - 2026-02-24
+
 - TMS-1246: Center image-blocks image more
 
 ## [1.1.0] - 2026-02-22
