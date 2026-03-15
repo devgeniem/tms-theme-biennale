@@ -47,6 +47,10 @@
             rgba($black, .5) 50%
         );
         padding: $theme-spacing-two $theme-spacing-half;
+
+        @include until($tablet) {
+            padding: $theme-spacing-two;
+        }
     }
 
     &__carousel {
@@ -67,6 +71,11 @@
                     fill: $white;
                     stroke: $primary;
                     stroke-width: 2px;
+
+                    @include until($tablet) {
+                        height: 30px;
+                        width: 30px;
+                    }
                 }
 
                 &--prev svg {
