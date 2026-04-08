@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-1256: Add min-width for event filter select-elements
+- TMS-1260: Add sr-only text for opening image-blocks modal
+
+## [1.1.2] - 2026-03-16
+
 - TMS-1257: Add info text for category filters
+- TMS-1256: Add min-width for event filter select-elements
 
 ## [1.1.1] - 2026-02-24
 
